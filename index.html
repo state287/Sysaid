@@ -304,6 +304,50 @@
   .step h3 { margin: 0 0 8px; font-size: 16.5px; }
   .step p { margin: 0; color: var(--muted); font-size: 14.5px; }
 
+  /* Live calendar embed */
+  .calendar-embed {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .calendar-embed-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--line);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy);
+  }
+
+  .calendar-embed-bar a {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--teal-dark);
+    text-decoration: none;
+  }
+  .calendar-embed-bar a:hover { text-decoration: underline; }
+
+  .calendar-embed iframe {
+    display: block;
+    width: 100%;
+    height: 650px;
+    border: 0;
+  }
+
+  .embed-fallback {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin: 0 0 48px;
+  }
+  .embed-fallback a { color: var(--teal-dark); font-weight: 600; text-decoration: none; }
+  .embed-fallback a:hover { text-decoration: underline; }
+
   /* Booking / calendar CTA */
   .booking {
     background: linear-gradient(135deg, #0e857f, #0f2b46);
@@ -557,6 +601,40 @@
 
   <section id="book">
     <div class="wrap">
+      <div class="section-head">
+        <p class="section-tag">Live availability</p>
+        <h2>See the calendar, right here</h2>
+        <p>This is the actual help desk calendar — no separate login needed to check what's open.</p>
+      </div>
+
+      <div class="calendar-embed">
+        <div class="calendar-embed-bar">
+          <span>📅 Live help desk calendar</span>
+          <a href="https://outlook.office365.com/owa/calendar/a69a062f98c64d9c83b30949ccbb0fea@eastersealsma.org/5ff771a831524832a75d8b5fc19d653b11456831636838272079/calendar.html" target="_blank" rel="noopener">
+            Open full screen ↗
+          </a>
+        </div>
+        <iframe
+          src="https://outlook.office365.com/owa/calendar/a69a062f98c64d9c83b30949ccbb0fea@eastersealsma.org/5ff771a831524832a75d8b5fc19d653b11456831636838272079/calendar.html"
+          title="Easterseals MA IT Help Desk — live calendar"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <noscript>
+          <p style="padding:20px;">
+            <a href="https://outlook.office365.com/owa/calendar/a69a062f98c64d9c83b30949ccbb0fea@eastersealsma.org/5ff771a831524832a75d8b5fc19d653b11456831636838272079/calendar.html" target="_blank" rel="noopener">
+              View the live calendar
+            </a>
+          </p>
+        </noscript>
+      </div>
+
+      <p class="embed-fallback">
+        Calendar not showing up above? Outlook sometimes blocks embedding depending on
+        sharing settings —
+        <a href="https://outlook.office365.com/owa/calendar/a69a062f98c64d9c83b30949ccbb0fea@eastersealsma.org/5ff771a831524832a75d8b5fc19d653b11456831636838272079/calendar.html" target="_blank" rel="noopener">open it directly instead</a>.
+      </p>
+
       <div class="booking">
         <div>
           <h2>Ready to get unblocked?</h2>
